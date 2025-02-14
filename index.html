@@ -27,31 +27,45 @@
         .dropdown button {
             background: #007BFF;
             color: white;
-            padding: 10px;
+            padding: 10px 15px;
             border: none;
             cursor: pointer;
             border-radius: 5px;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        .dropdown button:hover {
+            background: #0056b3;
         }
         .dropdown-content {
             display: none;
             position: absolute;
             background: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
             right: 0;
-            min-width: 200px;
+            min-width: 220px;
+            overflow: hidden;
         }
         .dropdown-content a {
             display: block;
-            padding: 10px;
+            padding: 12px 16px;
             text-decoration: none;
-            color: black;
+            color: #333;
+            font-size: 14px;
+            transition: background 0.3s;
         }
         .dropdown-content a:hover {
-            background: #ddd;
+            background: #007BFF;
+            color: white;
         }
         .dropdown:hover .dropdown-content {
             display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .container {
             max-width: 800px;
@@ -77,6 +91,7 @@
             text-decoration: none;
             border-radius: 5px;
             margin-top: 20px;
+            transition: background 0.3s;
         }
         .btn:hover {
             background: #0056b3;
@@ -101,7 +116,7 @@
     <div class="header">
         Azure Architect Blog
         <div class="dropdown">
-            <button>Topics</button>
+            <button>Topics &#9662;</button>
             <div class="dropdown-content">
                 <a href="#">Microsoft Defender Plans</a>
                 <a href="#">Confidential Compute</a>
